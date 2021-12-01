@@ -2,7 +2,6 @@
   <div>
     <carousel
       :per-page="1"
-      :navigate-to="someLocalProperty"
       :mouse-drag="false"
     >
       <slide> <card/> </slide>
