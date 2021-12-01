@@ -9,7 +9,7 @@
               <p class="mb-2 text-xs-white">Available balance</p>
               <div class="d-flex align-items-center">
                 <p class="custom-badge me-2 mb-2">S$</p>
-                <h4 class="fw-bold text-xs-white">3,000</h4>
+                <h4 class="fw-bold text-xs-white">3,0000</h4>
                 <div class="ms-auto">
                   <b-button class="bg-blue d-flex align-items-center">
                     <img src="../assets/icons/mobAddIcon.svg" class="me-1 d-md-none d-lg-none" />
