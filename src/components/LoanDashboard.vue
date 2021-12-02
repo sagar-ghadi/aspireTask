@@ -27,6 +27,9 @@
     <div class="container-fluid mt-4 px-5">
       <div class="row">
         <b-table striped hover bordered :items="results" :fields="fields"></b-table>
+        <b-card class="text-center" v-if="!results">
+          <p>data not available</p>
+        </b-card>
       </div>
     </div>
   </div>
