@@ -4,6 +4,7 @@ import Dashboard from '../views/Dashboard.vue'
 import Register from '../components/Register.vue'
 import LoanForm from '../components/ApplyLoanForm.vue'
 import loanDash from '../components/LoanDashboard.vue'
+import LoginForm from '../components/loginUser.vue'
 
 Vue.use(VueRouter)
 
@@ -12,6 +13,11 @@ const routes = [
     path: '/',
     name: 'Register',
     component: Register
+  },
+  {
+    path: '/loginForm',
+    name: 'loginForm',
+    component: LoginForm
   },
   {
     path: '/loanForm',

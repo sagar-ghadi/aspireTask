@@ -4,14 +4,10 @@
   >
     <b-card
       class="col-10 col-md-6 col-lg-4 shadow-sm rounded-5"
-      header="Register user"
+      header="Login user"
     >
       <form @submit.prevent="onSubmit" class="px-3 py-2">
         <div>
-          <div :class="{ hasError: $v.form.name.$error }" class="mb-3">
-            <label>Enter name</label>
-            <b-form-input type="text" class="input" v-model="form.name" />
-          </div>
           <div :class="{ hasError: $v.form.email.$error }" class="mb-3">
             <label>Enter email</label>
             <b-form-input type="text" class="input" v-model="form.email" />
@@ -22,7 +18,7 @@
           </div>
         </div>
         <div class="d-grid">
-          <b-button type="submit" class="bg-malachite">Submit</b-button>
+          <b-button type="submit" class="bg-malachite">Login</b-button>
         </div>
       </form>
     </b-card>
@@ -38,7 +34,6 @@ export default {
   data() {
     return {
       form: {
-        name: "",
         email: "",
         password:""
       },
@@ -47,25 +42,30 @@ export default {
   },
   validations: {
     form: {
-      name: { required, min: minLength(5) },
       email: { required, email },
       password: { required, min: minLength(5) }
     },
   },
   methods: {
     makeToast() {
-      Vue.toasted.show("registered successfully!!!!", {
+      Vue.toasted.show("login successfully!!!!", {
         type: "success",
         position: "top-right",
         duration: 1000,
       });
     },
     onSubmit() {
+      debugger;
       this.$v.form.$touch();
       if (this.$v.form.$error) return;
-      localStorage.setItem("storedRegisterData", JSON.stringify(this.form));
-      this.makeToast();
-      router.push({ name: "LoanForm" });
+      localStorage.setItem("storedLoginData", JSON.stringify(this.form));
+      let registeredData = JSON.parse(localStorage.getItem("storedRegisterData"));
+      if(registeredData.email == this.form.email && registeredData.password == this.form.password ){
+        this.makeToast();
+        router.push({ name: "loanDash" });
+      }else{
+        alert('Error on login');
+      }
     },
   },
 };
