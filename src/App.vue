@@ -68,5 +68,11 @@
   .fs-12 {
     font-size: 8px !important;
   }
+  .loan-details-table .table {
+    color: #fff !important;
+  }
+  .loan-details-table .table-striped > tbody > tr:nth-of-type(odd) > *{
+    color: #fff !important;
+  }
 }
 </style>
